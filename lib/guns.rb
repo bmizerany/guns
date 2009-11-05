@@ -1,6 +1,6 @@
 module Guns
 
-  class Failure < Exception ; end
+  class Failure < StandardError ; end
 
   def sh(cmd, *args)
     env = args.pop if args.last.kind_of?(Hash)

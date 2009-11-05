@@ -43,4 +43,6 @@ TODO:  Replace popen3
 
 [Joe Ruscio](http://github.com/josephruscio) for helping me debug that nasty deadlock
 
-[Ryan Tomayko](http://www.tomayko.com) for Shotgun; where I got started with this
+[Ryan Tomayko](http://www.tomayko.com) for [Shotgun](http://github.com/rtomayko/shotgun); where I got started with this
+
+[Adam Wiggins](http://www.tomayko.com) for [Rush](http://github.com/adamwiggins/rush)

@@ -24,6 +24,9 @@ module Guns
       out = rout.read
       err = rerr.read
 
+      rout.close
+      rerr.close
+
       [out, err, exitstatus]
     else
       # Child

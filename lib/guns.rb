@@ -27,7 +27,6 @@ module Guns
       [out, err, exitstatus]
     else
       # Child
-
       if env
         env.each {|k,v| ENV[k] = v}
       end

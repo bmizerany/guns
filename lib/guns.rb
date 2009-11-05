@@ -50,6 +50,7 @@ module Guns
   def sh!(*args)
     out, err, code = sh(*args)
     raise Failure, err if code != 0
+    [out, err, code]  
   end
   module_function :sh!
 

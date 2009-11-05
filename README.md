@@ -40,5 +40,7 @@ If you need more flexability and features, see [Rush](http://github.com/adamwigg
 TODO:  Replace popen3
 
 ## Thanks
+
 [Joe Ruscio](http://github.com/josephruscio) for helping me debug that nasty deadlock
+
 [Ryan Tomayko](http://www.tomayko.com) for Shotgun; where I got started with this

@@ -49,9 +49,10 @@ module Guns
   end
   module_function :sh
 
-  def sh!(*args)
-    out, err, code = sh(*args)
-    raise Failure, err if code != 0
+  def sh!(cmd, *args)
+    out, err, code = sh(cmd, *args)
+    cmd << " " << args.join(" ") if !args.empty?
+    raise Failure, "(#{cmd})\n#{err}" if code != 0
     [out, err, code]
   end
   module_function :sh!

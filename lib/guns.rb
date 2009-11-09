@@ -50,9 +50,21 @@ module Guns
   module_function :sh
 
   def sh!(cmd, *args)
-    out, err, code = sh(cmd, *args)
-    cmd << " " << args.join(" ") if !args.empty?
-    raise Failure, "(#{cmd})\n#{err}" if code != 0
+    env = args.pop if args.last.kind_of?(Hash)
+    env ||= {}
+    out, err, code = sh(cmd, *(args + [env]))
+    if code != 0
+      cmd << " " << args.join(" ") if !args.empty?
+      said = []
+      said << out if !out.empty?
+      said << err if !err.empty?
+      said = said.join "\n"
+      if !env.empty?
+        envs = env.map {|a| a * "=" }.join(" ")
+        cmd = envs << " " << cmd
+      end
+      raise Failure, "(#{cmd})\n#{said}}"
+    end
     [out, err, code]
   end
   module_function :sh!
